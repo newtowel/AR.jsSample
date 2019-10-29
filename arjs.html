@@ -15,14 +15,9 @@ ndex.html
     <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIは非表示） -->
     <a-scene vr-mode-ui='enabled: false' arjs='trackingMethod: best; debugUIEnabled: false;' renderer='logarithmicDepthBuffer: true;'>
       <a-assets timeout='900000'>
-        <a-asset-item id='obj' src="xxxx"></a-asset-item>
-        <a-asset-item id='mtl' src="xxxx"></a-asset-item>
-      </a-assets>
-      <a-obj-model src='#obj' mtl='#mtl' rotation='-90 0 0' position='0 0 -5' scale='0.0002 0.0002 
-                 0.0002'></a-obj-model>
-      <a-entity id='rig' movement-controls='speed: 0.1'>
-        <a-camera look-controls id='camera' position='0 1.6 0'></a-camera>
-      </a-entity>
+        <a-box position="5 0 -7" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
     </a-scene>
   </body>
 </html>
