@@ -9,19 +9,10 @@
 <!-- シーンの追加とデバックUIを非表示 -->
 <a-scene embedded arjs="debugUIEnabled:false;">
 
-  <!-- ② hiroマーカーでのソース -->
-  <a-marker preset="hiro">
-    <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#111">
-      <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite">
-      </a-animation>
-    </a-sphere>
-  </a-marker>
-
-
   <!-- ③ 作成したマーカーでのソース -->
-  <a-marker type='pattern' url='./pattern-QR_409719.patt'>
-    <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#f00">
-      <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite">
+  <a-marker type='pattern' url='pattern-QR_409719.patt'>
+    <a-sphere scale="1 1 1" position="1 1 1" color="#f00">
+      <a-animation attribute="position" to="0 10 0" direction="alternate" dur="2000" repeat="indefinite">
       </a-animation>
     </a-sphere>
   </a-marker>
