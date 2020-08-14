@@ -1,22 +1,33 @@
-<!doctype HTML>
-<html>
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<!DOCTYPE html>
+<head>
+  <!-- ① スクリプトの読み込み -->
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+</head>
+<body style='margin: 0; overflow: hidden;'>
+
+<!-- シーンの追加とデバックUIを非表示 -->
+<a-scene embedded arjs="debugUIEnabled:false;">
+
+  <!-- ② hiroマーカーでのソース -->
+  <a-marker preset="hiro">
+    <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#111">
+      <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite">
+      </a-animation>
+    </a-sphere>
+  </a-marker>
 
 
-    <!-- A-Frameを読み込み -->
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-    <!-- AR.jsを読み込み -->
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+  <!-- ③ 作成したマーカーでのソース -->
+  <a-marker type='pattern' url='C:Users/rokas/pattern-QR_409719.patt'>
+    <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#f00">
+      <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite">
+      </a-animation>
+    </a-sphere>
+  </a-marker>
 
-    <body style="margin : 0px; overflow: hidden">
-    <!-- AR.jsのデバックとA-FrameのVRボタンを非表示 -->
-        <a-scene embedded arjs="markersAreaEnabled: true, debugUIEnabled: false" vr-mode-ui="enabled: false">
-            <!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
-            <a-marker preset="custom" type="pattern"  url="pattern-newtowelgitarjssampleurl.patt">
-            <!-- 赤い立方体を表示 -->
-                <a-box position="0 0.5 0" width="0.5" height="0.5" depth="0.5" color="red"></a-box>
-            </a-marker>
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+
+  <a-entity camera></a-entity>
+</a-scene>
+</body>
 </html>
