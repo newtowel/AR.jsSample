@@ -7,12 +7,12 @@
 <body style='margin: 0; overflow: hidden;'>
 
 <!-- シーンの追加とデバックUIを非表示 -->
-<a-scene embedded arjs="debugUIEnabled:false;">
+<a-scene embedded arjs="debugUIEnabled:false;trackingMethod:best;patternRatio:0.90;" vr-mode-ui="enabled:false">
 
   <!-- ③ 作成したマーカーでのソース -->
   <a-marker type='pattern' url='pattern-QR_409719.patt'>
     <a-cube color="#32cd32" rotation="20 40 0" position="0 1 0">
-      <!--
+      
       <a-animation
         attribute="rotation"
         from="20 0 0"
@@ -22,7 +22,7 @@
         repeat="indefinite"
         easing="ease">
       </a-animation>
-      -->
+      
     </a-cube>
   </a-marker>
 
